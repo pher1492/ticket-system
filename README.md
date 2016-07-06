@@ -1,14 +1,24 @@
-<h2>Ticket System</h2>
+# README
 
-This is a ticket system I am creating to showcase at work.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-It currently is using 
+Things you may want to cover:
 
-Ruby -v 2.3
+* Ruby version
 
-Rails -v 5.0
+* System dependencies
 
+* Configuration
 
-This is the second time i had to create this. The first time it  could not find activesupport 5.0
+* Database creation
 
-No idea what the problem was, but recreating the project worked. 
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
