@@ -1,0 +1,13 @@
+<h1>Creating Ticket</h1><br>
+
+<%= form_tag :action => 'create' do %>
+	<p><label for = 'ticket_title'>Title</label>:
+	<%= text_field 'tickets', 'title' %></p>
+
+	<p><label for = 'ticket_body'>Description</label>:<br>
+	<%= text_field 'tickets', 'body' %></p>
+
+	<%= submit_tag 'create' %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list'} %>
