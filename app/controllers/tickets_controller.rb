@@ -29,7 +29,7 @@ class TicketsController < ApplicationController
 	def update
 		@ticket = Ticket.find(params[:id])
 
-		if @tickets.update_attributes(ticket_params)
+		if @ticket.update_attributes(ticket_params)
 			redirect_to :action => 'show', :id => @ticket
 		else
 			redirect_to :action => 'edit'
