@@ -9,8 +9,8 @@
 		need to figure out how to get whole line
 	!-->
 	<ul id = "tickets">
-		<% @tickets.each do |c| %>
-			<li><%= link_to c.title, { :action => "show", @id => c.id } -%></li>
+		<% @tickets.each do |ticket| %>
+			<li><%= link_to ticket.title, tickets_show_path(@ticket) %></li>
 		<% end %>
 	</ul>
 
