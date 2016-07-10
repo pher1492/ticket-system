@@ -4,13 +4,15 @@
 
 <% else %>
 
+	<h1>Tickets</h1>
 	<!---
 		could turn this into table
 		need to figure out how to get whole line
 	!-->
 	<ul id = "tickets">
 		<% @tickets.each do |ticket| %>
-			<li><%= link_to ticket.title, { :action => 'show', :id => ticket} %></li>
+			<li><%= link_to ticket.id, { :action => 'show', :id => ticket} %>
+				<%= link_to ticket.title, { :action => 'show', :id => ticket} %></li>
 		<% end %>
 	</ul>
 
