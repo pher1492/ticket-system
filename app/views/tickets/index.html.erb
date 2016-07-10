@@ -10,7 +10,7 @@
 	!-->
 	<ul id = "tickets">
 		<% @tickets.each do |ticket| %>
-			<li><%= link_to 'Show', ticket_path(:id) %></li>
+			<li><%= link_to ticket.title, { :action => 'show', :id => ticket} %></li>
 		<% end %>
 	</ul>
 

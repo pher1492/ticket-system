@@ -4,6 +4,10 @@ class TicketsController < ApplicationController
 		@tickets = Ticket.all
 	end
 
+	def index
+		@tickets = Ticket.all
+	end
+
 	def show
 		@ticket = Ticket.find(params[:id])
 	end
@@ -16,7 +20,7 @@ class TicketsController < ApplicationController
 		@ticket = Ticket.new(ticket_params)
 
 		if @ticket.save
-			redirect_to :action => 'list'
+			redirect_to :action => 'index'
 		else
 			redirect_to :action => 'new'
 		end
@@ -38,7 +42,7 @@ class TicketsController < ApplicationController
 
 	def delete
 		@ticket = Ticket.find(params[:id]).destory
-		redirect_to :action => 'list'
+		redirect_to :action => 'index'
 	end
 
 		private def ticket_params
