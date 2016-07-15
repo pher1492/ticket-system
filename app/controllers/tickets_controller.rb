@@ -1,5 +1,7 @@
 class TicketsController < ApplicationController
 	
+	protect_from_forgery
+
 	def list
 		@tickets = Ticket.all
 	end
@@ -45,7 +47,7 @@ class TicketsController < ApplicationController
 		redirect_to :action => 'index'
 	end
 
-		private def ticket_params
+	private def ticket_params
 		params.require(:tickets).permit(:title, :body)
 	end
 

@@ -15,13 +15,18 @@ ActiveRecord::Schema.define(version: 20160710174247) do
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "user"
     t.text     "body",       limit: 65535
+    t.integer  "ticket_id"
+    t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["ticket_id"], name: "index_comments_on_ticket_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "tickets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                    null: false
     t.text     "body",       limit: 65535
+    t.integer  "ticket_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -31,4 +36,5 @@ ActiveRecord::Schema.define(version: 20160710174247) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "users"
 end

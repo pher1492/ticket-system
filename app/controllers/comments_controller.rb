@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
 
+
+
 	def create
-		@ticket = Ticket.find(params[:id])
+		@ticket = Ticket.find(params[:ticket_id])
 		@comment = @ticket.comments.create(comment_params)
 		redirect_to ticket_path(@ticket)
 	end

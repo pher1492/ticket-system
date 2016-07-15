@@ -4,7 +4,9 @@ class CreateTickets < ActiveRecord::Migration[5.0]
 
     	t.string :title, :null => false
 			t.text :body
+			t.integer :ticket_id
     	t.timestamps
     end
+
   end
 end
